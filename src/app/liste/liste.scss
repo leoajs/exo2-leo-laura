@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+img {
+  width: min(300px, 100%);
+  height: auto;
+}
