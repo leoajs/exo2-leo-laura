@@ -3,7 +3,7 @@
 <nav aria-label="Films">
   <ul>
     @for (film of films; track film.titre) {
-      <li><a href="#film-selectionne" (click)="filmSelectionne = film">{{ film.titre }}</a></li>
+      <li><a href="#film-selectionne" (click)="$event.preventDefault(); filmSelectionne = film">{{ film.titre }}</a></li>
     }
   </ul>
 </nav>
