@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "exo2-leo": {
+    "exo2-leo-laura": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -62,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "exo2-leo:build:production"
+              "buildTarget": "exo2-leo-laura:build:production"
             },
             "development": {
-              "buildTarget": "exo2-leo:build:development"
+              "buildTarget": "exo2-leo-laura:build:development"
             }
           },
           "defaultConfiguration": "development"
