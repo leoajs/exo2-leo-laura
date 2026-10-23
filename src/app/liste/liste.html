@@ -7,17 +7,19 @@
       <mat-card-title><h2>{{ films.length }} Films à l’affiche</h2></mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-selection-list
-        aria-label="Choisir un film"
-        [multiple]="false"
-        (selectionChange)="filmSelectionne = $event.options[0].value"
-      >
+      <mat-nav-list aria-label="Choisir un film">
         @for (film of films; track film.titre) {
-          <mat-list-option [value]="film" [selected]="filmSelectionne === film">
+          <a
+            mat-list-item
+            href="#film-selectionne"
+            [activated]="filmSelectionne === film"
+            [attr.aria-current]="filmSelectionne === film ? 'true' : null"
+            (click)="filmSelectionne = film; $event.preventDefault()"
+          >
             <span matListItemTitle>{{ film.titre }}</span>
-          </mat-list-option>
+          </a>
         }
-      </mat-selection-list>
+      </mat-nav-list>
     </mat-card-content>
   </mat-card>
 

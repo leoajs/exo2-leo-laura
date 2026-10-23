@@ -1,23 +1,25 @@
 :host {
   display: block;
   width: 100%;
-  max-width: 960px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 h1 {
+  text-align: center;
   margin: 0 0 0.5rem;
   font: var(--mat-sys-headline-large);
 }
 
 .introduction {
+  text-align: center;
   margin: 0 0 2rem;
   color: var(--mat-sys-on-surface-variant);
 }
 
 .catalogue {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: 1.5rem;
 }
@@ -28,16 +30,18 @@ h2 {
 }
 
 mat-card-header {
+  justify-content: center;
+  text-align: center;
   margin-bottom: 1rem;
 }
 
-mat-list-option {
+a[mat-list-item] {
   margin-bottom: 0.25rem;
   border-radius: 0.5rem;
 }
 
-img[matListItemAvatar] {
-  border-radius: 0.25rem;
+span[matListItemTitle] {
+  white-space: normal;
 }
 
 .apercu {
@@ -55,15 +59,4 @@ img[matListItemAvatar] {
 .aucune-selection {
   padding: 3rem 1.5rem;
   text-align: center;
-}
-
-.aucune-selection p {
-  margin-bottom: 0;
-  color: var(--mat-sys-on-surface-variant);
-}
-
-@media (max-width: 700px) {
-  .catalogue {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }

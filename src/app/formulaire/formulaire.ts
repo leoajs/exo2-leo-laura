@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { Contact } from '../services/contact';
 
 
 function contientArobase(control: AbstractControl): ValidationErrors | null {
@@ -28,6 +29,7 @@ function contientArobase(control: AbstractControl): ValidationErrors | null {
 export class Formulaire {
   private fb = inject(FormBuilder);
   private router = inject(Router);
+  private contact = inject(Contact);
 
   form = this.fb.group({
     prenom: ['', Validators.required],
@@ -53,6 +55,15 @@ export class Formulaire {
 
   onSubmit() {
     if (this.form.valid) {
+      const valeurs = this.form.getRawValue();
+      this.contact.dernierFormulaire = {
+        prenom: valeurs.prenom ?? '',
+        nom: valeurs.nom ?? '',
+        age: valeurs.age,
+        hide: valeurs.hide ?? false,
+        email: valeurs.email ?? '',
+        commentaire: valeurs.commentaire ?? '',
+      };
       alert('Le formulaire est valide');
       this.router.navigate(['/']);
     }
