@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 interface Film {
   titre: string;
@@ -6,7 +8,7 @@ interface Film {
 }
 
 @Component({
-  imports: [],
+  imports: [MatCardModule, MatListModule],
   selector: 'app-liste',
   styleUrl: './liste.scss',
   templateUrl: './liste.html',

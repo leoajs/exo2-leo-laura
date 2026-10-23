@@ -1,16 +1,44 @@
 <h1>Liste des films</h1>
+<p class="introduction">Sélectionnez un film pour découvrir son affiche</p>
 
-<nav aria-label="Films">
-  <ul>
-    @for (film of films; track film.titre) {
-      <li><a href="#film-selectionne" (click)="$event.preventDefault(); filmSelectionne = film">{{ film.titre }}</a></li>
-    }
-  </ul>
-</nav>
+<div class="catalogue">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title><h2>{{ films.length }} Films à l’affiche</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-selection-list
+        aria-label="Choisir un film"
+        [multiple]="false"
+        (selectionChange)="filmSelectionne = $event.options[0].value"
+      >
+        @for (film of films; track film.titre) {
+          <mat-list-option [value]="film" [selected]="filmSelectionne === film">
+            <span matListItemTitle>{{ film.titre }}</span>
+          </mat-list-option>
+        }
+      </mat-selection-list>
+    </mat-card-content>
+  </mat-card>
 
-@if (filmSelectionne) {
-  <section id="film-selectionne">
-    <h2>{{ filmSelectionne.titre }}</h2>
-    <img [src]="filmSelectionne.affiche" [alt]="'Affiche du film ' + filmSelectionne.titre" />
+  <section id="film-selectionne" aria-live="polite" aria-atomic="true">
+    <mat-card appearance="outlined" class="apercu">
+      @if (filmSelectionne) {
+        <mat-card-header>
+          <mat-card-title><h2>{{ filmSelectionne.titre }}</h2></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <img
+            class="affiche"
+            [src]="filmSelectionne.affiche"
+            [alt]="'Affiche du film ' + filmSelectionne.titre"
+          />
+        </mat-card-content>
+      } @else {
+        <mat-card-content class="aucune-selection">
+          <h3>Choisissez votre film dans la liste</h3>
+        </mat-card-content>
+      }
+    </mat-card>
   </section>
-}
+</div>
