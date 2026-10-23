@@ -1,0 +1,13 @@
+<section class="gestion">
+  @if (dernierFormulaire; as formulaire) {
+    <h2>Dernier formulaire de contact</h2>
+    <p><strong>Prénom :</strong> {{ formulaire.prenom }}</p>
+    <p><strong>Nom :</strong> {{ formulaire.nom }}</p>
+    <p><strong>Âge :</strong> {{ formulaire.age ?? 'Non renseigné' }}</p>
+    <p><strong>Hide :</strong> {{ formulaire.hide ? 'Oui' : 'Non' }}</p>
+    <p><strong>Email :</strong> {{ formulaire.email || 'Masqué' }}</p>
+    <p><strong>Commentaire :</strong> {{ formulaire.commentaire }}</p>
+  } @else {
+    <h2>404 not found</h2>
+  }
+</section>
