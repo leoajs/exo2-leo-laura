@@ -4,3 +4,24 @@
   margin: auto;
   text-align: center;
 }
+
+.erreur {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--mat-sys-surface-container-low);
+}
+
+.erreur h2 {
+  margin: 0;
+  color: var(--mat-sys-primary);
+  font: var(--mat-sys-display-large);
+}
+
+.erreur p {
+  margin: 0.5rem 0 0;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.erreur p:last-child {
+  margin-top: 1rem;
+}
