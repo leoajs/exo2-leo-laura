@@ -1,23 +1,69 @@
 :host {
   display: block;
   width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font: var(--mat-sys-headline-large);
+}
+
+.introduction {
+  margin: 0 0 2rem;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.catalogue {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+h2 {
+  margin: 0;
+  font: var(--mat-sys-title-large);
+}
+
+mat-card-header {
+  margin-bottom: 1rem;
+}
+
+mat-list-option {
+  margin-bottom: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+img[matListItemAvatar] {
+  border-radius: 0.25rem;
+}
+
+.apercu {
+  background-color: var(--mat-sys-surface-container-low);
+}
+
+.affiche {
+  display: block;
+  width: min(300px, 100%);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+
+.aucune-selection {
+  padding: 3rem 1.5rem;
   text-align: center;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.aucune-selection p {
+  margin-bottom: 0;
+  color: var(--mat-sys-on-surface-variant);
 }
 
-li {
-  margin: 0.5rem 0;
-}
-
-section {
-  margin-top: 2rem;
-}
-
-img {
-  width: min(300px, 100%);
-  height: auto;
+@media (max-width: 700px) {
+  .catalogue {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
