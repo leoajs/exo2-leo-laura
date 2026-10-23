@@ -9,4 +9,5 @@ main {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  padding-bottom: calc(2rem + 50px); // éviter que le footer masque la page
 }
